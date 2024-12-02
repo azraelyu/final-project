@@ -1,0 +1,365 @@
+@font-face {
+    font-family: 'Samim';
+    src: url('../../font/Samim.eot');
+    src: url('../../font/Samim.woff') format('woff'),
+        url('../../font/Samim.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    direction: rtl;
+    font-family: 'Samim', sans-serif;
+    background-color: #fafbfc;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    direction: ltr;
+    margin: 8px;
+    background-color: #fff;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+}
+
+.logo img {
+    height: 50px;
+    width: 50px;
+    margin-top: 15%;
+    border-radius: 50%;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    position: relative;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    z-index: 1;
+    flex-direction: row;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    font-size: small;
+    padding: 5px 5px;
+    color: black;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    font-size: medium;
+    margin-bottom: 5px;
+    background-color: #fafbfc;
+    border-radius: 5px;
+    width: 85%;
+}
+
+/* Banners */
+.banner {
+    margin: 0 25px;
+}
+
+.banner-carousel {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.banner-wrapper {
+    display: flex;
+    animation: scroll 5s linear;
+}
+
+.banner-item-big {
+    flex: 0 0 30%;
+    box-sizing: border-box;
+    margin-top: 4%;
+    margin-inline: 5px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    max-height: 300px;
+}
+
+.banner-item-small {
+    flex: 0 0 20%;
+    box-sizing: border-box;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    max-height: 400px;
+}
+
+.img-banner {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.img-banner:hover {
+    padding: 5px;
+    background-color: #d0d0d0;
+}
+
+@keyframes scroll {
+    100% {
+        transform: translateX(0);
+    }
+    0% {
+        transform: translateX(-100%);
+    }
+}
+
+/* products */
+.products {
+    padding: 20px;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product-item {
+    flex: 1 1 calc(33% - 20px);
+    margin: 10px;
+    padding: 20px;
+    background-color: #fff;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.product-item:hover img {
+    padding: 10px;
+    background-color: #d0d0d0;
+}
+
+.product-item img {
+    width: 300px;
+    height: 200px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 50%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-right: 25%;
+}
+
+.show-button {
+    text-decoration: none;
+    color: black;
+    width: 40%;
+    height: 30px;
+    background-color: #f5f9fa;
+    border-radius: 10px;
+    box-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.show-button:hover {
+    background-color: #fff;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.show-button-shop {
+    text-decoration: none;
+    color: black;
+    width: 40%;
+    height: 30px;
+    background-color: #f5f9fa;
+    border-radius: 10px;
+    box-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.show-button-shop:hover {
+    background-color: green;
+    box-shadow: none;
+}
+
+.shop-button {
+    text-decoration: none;
+    color: black;
+    width: 50%;
+    height: auto;
+    background-color: #f5f9fa;
+    border-radius: 10px;
+    box-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.shop-button:hover {
+    background-color: #fff;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.shop-button-shop {
+    text-decoration: none;
+    color: black;
+    width: 40%;
+    height: auto;
+    background-color: #f5f9fa;
+    border-radius: 10px;
+    box-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.shop-button-shop:hover {
+    background-color: red;
+    box-shadow: none;
+}
+
+.count {
+    background-color: #f5f9fa;
+    border-radius: 50%;
+    padding-inline: 5px;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    margin: 0 5px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+footer {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.trust-logos img {
+    margin: 0 10px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.show-product {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 25px;
+    height: 70%;
+    width: calc(100% - 50px);
+}
+
+.product-img {
+    width: 30%;
+}
+
+.product-img img {
+    background-color: #fff;
+    padding: 10px;
+    width: 100%;
+    height: 300px;
+    border-radius: 40px;
+}
+
+.product-text {
+    margin: 25px;
+    text-align: center;
+}
+
+.product-button {
+    align-items: center;
+}
+
+.order {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.order a {
+    margin: 0 5px;
+    padding: 5px;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #f5f9fa;
+    box-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+    color: black;
+}
+
+.order a:hover {
+    margin: 0 5px;
+    padding: 5px;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    box-shadow: none;
+    color: black;
+}
+
+/* responsive*/
+@media (max-width: 768px) {
+    .product-item {
+        flex: 1 1 calc(50% - 20px);
+    }
+
+    .banner-item-small {
+        display: none;
+    }
+
+    .banner-item-big {
+        flex: 0 0 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-item {
+        flex: 1 1 100%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+}

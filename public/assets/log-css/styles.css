@@ -1,0 +1,108 @@
+@font-face {
+    font-family: 'Samim';
+    src: url('../../font/Samim.eot');
+    src: url('../../font/Samim.woff') format('woff'),
+        url('../../font/Samim.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    direction: rtl;
+    font-family: 'Samim', sans-serif;
+    background-image: url('../log-image/background.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: #dae0db;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.6);
+    width: 90%;
+    max-width: 400px;
+}
+
+h2 {
+    text-align: center;
+}
+
+input {
+    font-size: medium;
+    width: 95%;
+    padding: 10px;
+    background-color: rgba(247, 250, 248, 0.1);
+    color: #dae0db;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+input:hover {
+    background-color: #676968;
+    color: #dae0db;
+}
+
+/* to change the place holder color */
+::placeholder {
+    color: #dae0db;
+    opacity: 1;
+    /* Firefox */
+}
+::-ms-input-placeholder {
+    /* Edge 12 -18 */
+    color: #dae0db;
+}
+
+button {
+    font-size: medium;
+    width: 100%;
+    padding: 10px;
+    background-color: #1e4c7c;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+a {
+    color:#73bcf8 ;
+    text-decoration: underline;
+    margin-top: 10px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    input, button {
+        padding: 8px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 400px) {
+    .container {
+        width: 95%;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+}
