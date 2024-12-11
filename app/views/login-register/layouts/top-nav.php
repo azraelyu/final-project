@@ -7,6 +7,6 @@
     <?php
         echo '<title>'.$title.'</title>';
     ?>
-    <link rel="stylesheet" href="../../../../../../final-project/website/public/assets/log-css/styles.css">
+    <link rel="stylesheet" href="<?php echo asset('log-css/styles.css'); ?>">
 </head>
 <body>

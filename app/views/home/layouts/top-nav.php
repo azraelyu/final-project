@@ -7,27 +7,24 @@
     <?php
         echo '<title>'.$title.'</title>';
     ?>
-    <link rel="stylesheet" href="../../../../../../final-project/website/public/assets/home-css/styles.css">
+    <link rel="stylesheet" href="<?php echo asset('home-css/styles.css') ?>">
 </head>
 
 <body>
     <header>
         <div class="logo">
-            <img src="../../../../../../final-project/website/public/assets/home-image/logo.jpg" alt="Avatar">
+            <img src="<?php echo asset('home-image/logo.webp') ?>" alt="logo">
         </div>
         <nav>
             <ul>
-                <li class="dropdown">
-                    <a href="#">مرتب سازی</a>
-                    <div class="dropdown-content">
-                        <a href="#">کمترین قیمت</a>
-                        <a href="#">بیشترین قیمت</a>
-                        <a href="#">تازه ترین ها</a>
-                    </div>
-                </li>
-                <li><a href="#">پشتیبانی</a></li>
-                <li><a href="#">سبد خرید</a></li>
-                <li><a href="#">خانه</a></li>
+                <?php if (isset($_SESSION['id'])) { ?>
+                <li><a href="<?php echo url('authentication/logout/{$_SESSION["id"]}') ?>">خروج</a></li>
+                <?php } else { ?>
+                <li><a href="<?php echo url('authentication/login/show') ?>">ورود</a></li>
+                <?php } ?>
+                <li><a href="#contact-info">پشتیبانی</a></li>
+                <li><a href="<?php echo url('shop/show/{$_SESSION["id"]}') ?>">سبد خرید</a></li>
+                <li><a href="<?php echo url('public/page/1') ?>">خانه</a></li>
             </ul>
         </nav>
     </header>
