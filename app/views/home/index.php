@@ -53,9 +53,17 @@ $smallBanners = array_slice($banners, 2);
                     <a class="show-button" href="<?php echo url("public/show/{$product['id']}"); ?>">
                         مشاهده
                     </a>
-                    <a class="shop-button" href="#">
+
+                    <?php if (isset($_SESSION['id'])) { ?>
+                    <a class="shop-button" href="<?php echo url("shop/ord/{$product['id']}/{$_SESSION['id']}"); ?>">
                         افزودن به سبد خرید
                     </a>
+                    <?php } else { ?>
+                    <a class="shop-button" href="<?php echo url("authentication/login/show"); ?>">
+                        ورود برای خرید
+                    </a>
+                    <?php } ?>
+
                 </div>
             </div>
             <?php endforeach; ?>

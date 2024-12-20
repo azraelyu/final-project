@@ -8,7 +8,6 @@ session_start();
 require_once dirname(dirname(__DIR__)) . '/models/Home/User.php';
 
 
-
 class UserController {
     private $userModel;
 
@@ -80,10 +79,12 @@ class UserController {
         }
     }
 
-    public function logout() {
-        unset($_SESSION['id']);
-        session_destroy();
-        redirectBack();
+    public function logout($user) {
+        if (isset($_SESSION['id']) and $_SESSION['id'] == $user) {
+            unset($_SESSION['id']);
+            session_destroy();
+        }
+        redirect(url('public/page/1'));
         return;
     }
 

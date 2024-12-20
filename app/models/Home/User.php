@@ -17,7 +17,6 @@ class User {
     }
 
     public function createUser($request) {
-        // dd($request);
         $sql = "INSERT INTO users (first_name, last_name, email, password) VALUES (:first_name, :last_name, :email, :password);";
         $stmt = $this->conn->prepare($sql);
         $stmt->bindParam(':first_name', $request['first_name']);
@@ -26,6 +25,13 @@ class User {
         $stmt->bindParam(':password', $request['password']);
         $stmt->execute();
         return 1;
+    }
+
+    public function isAdmin($user) {
+        $sql = "SELECT * FROM users WHERE id = ? AND user_type = 1;";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute([$user]);
+        return $stmt->fetch();
     }
 
     public function __destruct() {

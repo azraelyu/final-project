@@ -13,14 +13,20 @@ require_once 'layouts/top-nav.php';
         <div class="product-text">
             <?php echo $product['description']; ?>
             <br> <br>
-            <?php echo number_format(ceil($product['price'])); ?> 
+            <?php echo number_format(ceil($product['price'])); ?>
             <br>
             تومان
         </div>
         <div class="product-button">
-            <a class="shop-button" href="#">
+            <?php if (isset($_SESSION['id'])) { ?>
+            <a class="shop-button" href="<?php echo url("shop/ord/{$product['id']}/{$_SESSION['id']}"); ?>">
                 افزودن به سبد خرید
             </a>
+            <?php } else { ?>
+            <a class="shop-button" href="<?php echo url('authentication/login/show'); ?>">
+                ورود برای خرید
+            </a>
+            <?php } ?>
         </div>
     </div>
     <?php } else {

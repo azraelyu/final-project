@@ -7,7 +7,7 @@
     <?php
         echo '<title>'.$title.'</title>';
     ?>
-    <link rel="stylesheet" href="../../../../../../final-project/website/public/assets/home-css/styles.css">
+    <link rel="stylesheet" href="<?php echo asset('home-css/styles.css'); ?>">
     <style>
         input {
             text-align: center;
@@ -34,12 +34,13 @@
 <body>
     <header>
         <div class="logo">
-            <img src="../../../../../../final-project/website/public/assets/home-image/logo.jpg" alt="Avatar">
+            <img src="<?php echo asset('home-image/logo.webp'); ?>" alt="Avatar">
         </div>
         <nav>
             <ul>
-                <li><a href="#">اضافه کردن محصول جدید</a></li>
-                <li><a href="#">نمایش محصولات</a></li>
+                <li><a href="<?php echo url("admin/add/show"); ?>">اضافه کردن محصول جدید</a></li>
+                <li><a href="<?php echo url("admin/show"); ?>">نمایش محصولات</a></li>
+                <li><a href="<?php echo url("public/page/1"); ?>">رفتن به فروشگاه</a></li>
             </ul>
         </nav>
     </header>

@@ -1,20 +1,18 @@
 <?php
-    $title = 'تغییر مشخصات محصول';
-    require_once 'layouts/top-nav.php';
+$title = 'اضافه کردن محصول';
+require_once 'layouts/top-nav.php';
 ?>
 
 
 <main>
-    <form class="show-product">
+    <form class="show-product" action="<?= url('admin/add') ?>" enctype="multipart/form-data" method="POST">
         <div class="product-text">
-            <label for="text">عکس:</label>
+            <label for="image">عکس:</label>
             <br>
-            <input type="file">
+            <input type="file" name="image" id="image">
             <br>
-            <label for="text">مشخصات:</label>
-            <textarea id="text" name="text" rows="4" cols="50">
-                At w3schools.com you will learn how to make a website. They offer free tutorials in all web development technologies.
-            </textarea>
+            <label for="description">مشخصات:</label>
+            <textarea id="description" name="description" rows="4" cols="50"></textarea>
             <br>
             <label for="price">قیمت:&nbsp;&nbsp;</label>
             <input id="price" name="price" type="number" placeholder="1,200,000">
@@ -30,5 +28,7 @@
 
 
 <?php
-    require_once 'layouts/footer.php';
+require_once 'layouts/footer.php';
+
+unset($title);
 ?>

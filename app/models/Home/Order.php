@@ -9,18 +9,25 @@ class Order {
         $this->conn = $db;
     }
 
-    public function getAllUserOrder($id) {
-        $sql = "SELECT * FROM orders WHERE user_id = ?;";
+    public function getUserActiveOrders($id) {
+        $sql = 'SELECT * FROM orders WHERE user_id = ? AND order_status = 0;';
         $stmt = $this->conn->prepare($sql);
         $stmt->execute([$id]);
-        return $stmt->fetchAll();
+        return $stmt->fetch();
     }
 
-    public function getProduct($user) {
-        $sql = "SELECT * FROM products WHERE id=?;";
+    public function createOrd($id) {
+        $sql = 'INSERT INTO orders (user_id, created_at) VALUES (?, now());';
         $stmt = $this->conn->prepare($sql);
-        $stmt->execute([$user]);
+        $stmt->execute([$id]);
         return $stmt->fetch();
+    }
+
+    public function pay($payment, $user) {
+        $sql = 'UPDATE orders SET payment_id = ? WHERE user_id =?;';
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute([$payment, $user]);
+        return $stmt->fetchAll();
     }
 
     public function __destruct() {
